@@ -35,7 +35,7 @@ This portfolio website is designed to highlight my work and projects, providing 
 
 ## Screenshot
 
-![Portfolio Screenshot](assets/img/website screenshot.png)
+![Portfolio Screenshot](assets/img/websitescreenshot.png)
 
 
 ## Installation
