@@ -43,39 +43,43 @@ const scrollUp = () =>{
 						: scrollUp.classList.remove('show-scroll')
 }
 window.addEventListener('scroll', scrollUp)
-
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
-const sections = document.querySelectorAll('section[id]')
-    
-const scrollActive = () =>{
-  	const scrollDown = window.scrollY
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav__list a');
 
-	sections.forEach(current =>{
-		const sectionHeight = current.offsetHeight,
-			  sectionTop = current.offsetTop - 58,
-			  sectionId = current.getAttribute('id'),
-			  sectionsClass = document.querySelector('.nav__list a[href*=' + sectionId + ']')
+const scrollActive = () => {
+    const scrollY = window.pageYOffset;
 
-		if(scrollDown > sectionTop && scrollDown <= sectionTop + sectionHeight){
-			sectionsClass.classList.add('active-link')
-		}else{
-			sectionsClass.classList.remove('active-link')
-		}                                                    
-	})
-}
+    sections.forEach((current) => {
+        const sectionHeight = current.offsetHeight;
+        const sectionTop = current.offsetTop - 58; // Adjust for fixed navbar
+        const sectionId = current.getAttribute('id');
+        const navLink = document.querySelector(`.nav__list a[href="#${sectionId}"]`);
+
+        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+            navLink?.classList.add('active-link'); // Add active class if in view
+        } else {
+            navLink?.classList.remove('active-link'); // Remove active class if out of view
+        }
+    });
+};
+
 window.addEventListener('scroll', scrollActive);
 
-/*==================SCROLL REVEAL ANIMATION ======================*/
+/*================== SCROLL REVEAL ANIMATION ======================*/
 const sr = ScrollReveal({
     origin: 'top',
     distance: '60px',
     duration: 2500,
     delay: 400,
-    reset: true
+    reset: true, // Enables animations to reset on re-scroll
 });
 
+// Targets for scroll reveal
 sr.reveal('.perfil, .contact__form');
 sr.reveal('.info', { origin: 'left', delay: 800 });
 sr.reveal('.skills', { origin: 'left', delay: 1000 });
 sr.reveal('.about', { origin: 'right', delay: 1200 });
-sr.reveal('.project__card, .services__card, .experience__card', { interval: 100 });
+sr.reveal('.project__card, .services__card, .experience__card, .achievement__card', { interval: 100 });
+
+

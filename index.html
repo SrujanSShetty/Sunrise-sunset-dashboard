@@ -19,8 +19,74 @@
 
 
    <title>Srujan Shekar Shetty - Portfolio</title>
+
+   <style>
+      /* Set the video to fill the entire screen */
+      .background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures the video covers the screen without stretching */
+            z-index: -1; /* Makes sure the video stays in the background */
+        }
+
+  </style>
 </head>
 <body>
+
+
+    <!-- Add this HTML section right after your body tag opens -->
+<div class="video-background">
+   <video autoplay muted loop playsinline>
+       <source src="assets/img/background-video.mp4" type="video/mp4">
+       Your browser does not support the video tag.
+   </video>
+</div>
+
+<style>
+/* Fixed video background styles */
+.video-background {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   z-index: -1;
+   overflow: hidden;
+}
+
+.video-background video {
+   position: absolute;
+   min-width: 100%;
+   min-height: 100%;
+   width: auto;
+   height: auto;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   object-fit: cover;
+}
+
+/* Ensure content appears above video */
+.main {
+   position: relative;
+   z-index: 1;
+}
+
+/* Optional: Add an overlay to improve text readability */
+.video-background::after {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: rgba(0, 0, 0, 0.3); /* Adjust opacity as needed */
+}
+</style>
+
    <!--==================== NAV ====================-->
    <nav class="nav">
       <ul class="nav__list">
@@ -47,7 +113,11 @@
                <i class="ri-honour-line"></i>  
             </a>
          </li> 
-         
+         <li>
+            <a href="#achievements" class="nav__link">
+               <i class="ri-medal-line"></i>
+            </a>
+         </li>
          <li>
             <a href="#contact" title="" class="nav__link">
                <i class="ri-send-plane-line"></i>
@@ -64,10 +134,10 @@
          <div class="home__container container grid">
             <!--===== PERFIL =====-->
             <div class= "perfil">
-               <img src="assets/img/srujan.jpg" alt="image" class="perfil__img">
+               <!-- <img src="#" alt="image" class="perfil__img"> -->
                <div class="perfil__data">
                   
-                  <h1 class= "perfil__name">SRJSTREAMS</h1>
+                  <h1 class= "perfil__name">SRUJAN SHEKAR SHETTY</h1>
                   
                   <div class="perfil__buttons">
                      <a href="#projects" class="button">Projects</a>
@@ -81,7 +151,7 @@
             <div class="info">
                <div class="info__data">
                   <div class="info__circle"></div>
-                  <h1 class="info__name">Srujan Shekar Shetty</h1>
+                  <h1 class="info__name">SRJ</h1>
                </div>
 
                <div class="info__image">
@@ -123,7 +193,7 @@
                </div>
 
                <div class="about__image">
-                  <img src="assets/img/about-perfil_img.png" alt="image" class="about__img">
+                  <img src="assets/img/bm.png" alt="image" class="about__img">
    
                </div>
 
@@ -152,6 +222,14 @@
                   <img src="https://cdn.worldvectorlogo.com/logos/css-3.svg" alt="CSS logo" >
                   <img src="https://cdn.worldvectorlogo.com/logos/java-4.svg" alt="Java logo" >
                   <img src="https://cdn.worldvectorlogo.com/logos/google-cloud-1.svg" alt="Google Cloud logo">
+                     <!-- JavaFX Logo -->
+                     <img src="assets/img/JavaFX_Logo.png" alt="JavaFX logo">
+
+                     <!-- White GitHub Logo -->
+                     <img src="assets/img/GitHub-logo.png" alt="GitHub logo">
+
+                     <!-- Black YouTube Logo -->
+                     <img src="assets/img/youtube.jpg" alt="YouTube logo">
                 </div>
                 <p class="skills__description">
                   You must defintely visit the project section to checkout the projects developed with these technologies.
@@ -162,6 +240,9 @@
    </div>
 </section>
       <!--==================== PROJECTS ====================-->
+
+
+      
 
       <section class="projects section" id="projects">
          <h2 class="section__title">RECENT PROJECTS</h2>
@@ -176,9 +257,7 @@
                <div class="project__data">
                   <h3 class= "Real-Time Stock Market Data Processing Engine"></h3>
                   <p class="project__description">
-                     Developed a real-time stock market data engine using Apache Kafka, Python, and AWS. 
-                     Simulated data production, integrated Kafka for event streaming, and used AWS Glue and Athena for real-time analytics.
-                     This project improved data engineering and cloud-based data management skills.
+                     Developed a real-time stock market engine using Apache Kafka for event streaming, AWS Glue, and Athena for analytics, and Python for data production and integration.
                   </p>
 
                   <div class="projects__skills">
@@ -200,8 +279,7 @@
                <div class="project__data">
                   <h3 class= "LinkedIn DataMart with ETL and Power BI"></h3>
                   <p class="project__description">
-                     Led the design and deployment of a LinkedIn DataMart using Curl API, SQL, and JSON.
-                     Automated data pipelines and created a Power BI dashboard for network analytics, optimizing LinkedIn profile utilization.
+                     Designed and deployed a LinkedIn DataMart using Curl API, SQL, and JSON. Automated data pipelines and developed a Power BI dashboard for network analytics, enhancing LinkedIn usage.
                   </p>
 
                   <div class="projects__skills">
@@ -225,8 +303,7 @@
                <div class="project__data">
                   <h3 class= "Customer Segmentation for UK-Based Gift Store"></h3>
                   <p class="project__description">
-                     Conducted clustering analysis using K-means, DBSCAN, and other models to identify customer segments. 
-                     Suggested 14 data-driven actions based on classification models for marketing and operations.
+                     Performed clustering with K-means and DBSCAN to identify customer segments and recommended 14 actions for marketing and operations based on model insights.
                   </p>
 
                   <div class="projects__skills">
@@ -248,8 +325,7 @@
                <div class="project__data">
                   <h3 class= "AI-Powered Food Ordering Chatbot"></h3>
                   <p class="project__description">
-                     Built an NLP-based chatbot using Google Dialogflow and FastAPI for real-time order processing with MySQL. 
-                     Enhanced customer interaction and automated workflows for a food ordering website.
+                     Built an NLP chatbot with Google Dialogflow and FastAPI for real-time order processing, automating workflows on a food ordering website.
                   </p>
 
                   <div class="projects__skills">
@@ -275,8 +351,7 @@
                            <div class="project__data">
                               <h3 class= "Spotify Stream Analytics Dashboard"></h3>
                               <p class="project__description">
-                                 This project features an interactive Power BI dashboard designed to analyze Spotify stream data.
-                                 The dashboard is enriched with advanced insights, offering a visually engaging and data-driven user experience.
+                                 Created an interactive Power BI dashboard to analyze Spotify stream data, providing advanced insights and a visually engaging user experience.
                               </p>
             
                               <div class="projects__skills">
@@ -299,9 +374,8 @@
                                  <div class="project__data">
                                     <h3 class= "Customer Segmentation for UK-Based Gift Store"></h3>
                                     <p class="project__description">
-                                       The project will enhance PM2.5 forecasting through data preprocessing and feature selection,
-                                        evaluating algorithms like linear regression and decision trees, and assessing reliability with MAE and RMSE metrics.
-                                       Visualizations will aid stakeholders in understanding air quality trends and health impacts.
+                                       Improved PM2.5 forecasting with preprocessing, feature selection, regression models, and reliability metrics (MAE, RMSE). 
+                                       Visualized air quality trends for stakeholders.
                                     </p>
                   
                                     <div class="projects__skills">
@@ -405,7 +479,48 @@
             </article>
 
       </section>
+      <!--==================== ACHIEVEMENTS & CERTIFICATIONS ====================-->
+<section class="achievements section" id="achievements">
+   <h2 class="section__title">ACHIEVEMENTS & CERTIFICATIONS</h2>
 
+   <div class="achievements__container container grid">
+      <!-- Achievement 1 -->
+      <article class="achievement__card">
+         <h3 class="achievement__title">Tableau Data Analyst</h3>
+         <p class="achievement__description">
+            Demonstrating expertise in visualizing and analyzing data to drive business decisions through interactive and insightful dashboards.
+         </p>
+         <a href="assets/pdf/Tableau Certificate.pdf" target="_blank" class="achievement__button">
+            <i class="ri-external-link-line"></i>
+            <span>View Certification</span>
+         </a>
+      </article>
+
+      <!-- Achievement 2 -->
+      <article class="achievement__card">
+         <h3 class="achievement__title">Microsoft Power BI Data Analyst</h3>
+         <p class="achievement__description">
+            Certified as a Microsoft Power BI Data Analyst, demonstrating proficiency in transforming data into actionable insights.
+         </p>
+         <a href="assets/pdf/PowerBi Certificate.pdf" target="_blank" class="achievement__button">
+            <i class="ri-external-link-line"></i>
+            <span>View Certification</span>
+         </a>
+      </article>
+
+      <!-- Achievement 3 -->
+      <article class="achievement__card">
+         <h3 class="achievement__title">Sports Certifications</h3>
+         <p class="achievement__description">
+            Awarded Champion titles in Indoor Games – Chess & Carrom, and Team Games – Kho-Kho & Throw Ball at School, demonstrating excellence in strategic thinking and teamwork.
+         </p>
+         <a href="https://www.linkedin.com/in/srujanshetty/details/education/1635469405916/single-media-viewer/?profileId=ACoAADPlSrUBMmo1OyZHHocrErjhxwtbdMXMpuw" target="_blank" class="achievement__button">
+            <i class="ri-external-link-line"></i>
+            <span>Learn More</span>
+         </a>
+      </article>
+   </div>
+</section>
     <!--==================== CONTACT ====================-->
       <section class="contact section" id="contact">
          <h2 class="section__title">CONTACT ME</h2>
