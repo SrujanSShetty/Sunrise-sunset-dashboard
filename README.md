@@ -26,7 +26,7 @@ Check out the live demo of the project at:
 
 ## Screenshots
 
-![Dashboard Screenshot](assets/screenshots/dashboard-screenshot.png)  
+![Dashboard Screenshot](assets/img/PageScreenshot.png)  
 *Above is a screenshot of the Sunrise & Sunset Dashboard.*
 
 ## Setup and Installation
