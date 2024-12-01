@@ -22,7 +22,7 @@ A web-based dashboard that provides real-time information on sunrise, sunset, da
 
 Check out the live demo of the project at:
 
-[GitHub Pages - Sunrise & Sunset Dashboard](https://your-username.github.io/sunrise-sunset-dashboard/)
+[GitHub Pages - Sunrise & Sunset Dashboard](https://srujansshetty.github.io/Sunrise-sunset-dashboard/)
 
 ## Screenshots
 
