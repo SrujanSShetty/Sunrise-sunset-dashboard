@@ -1,0 +1,226 @@
+/*=============== GLOBAL STYLES ===============*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  font-family: "Montserrat Alternates", sans-serif;
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Background video */
+#backgroundVideo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/*=============== HEADER ===============*/
+.header {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 10;
+  width: 100%;
+}
+
+.title {
+  font-size: 3rem;
+  color: var(--background-color);
+  text-shadow: 2px 2px var(--container-color);
+}
+
+button {
+  padding: 0.5rem 1rem;
+  background-color: var(--first-color);
+  color: var(--white-color);
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: var(--first-color-alt);
+}
+
+/*=============== MAIN CONTENT ===============*/
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 10rem; /* Push content down below the header */
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  z-index: 1; /* Ensures this content stays above the background video */
+}
+
+/*=============== RESULTS ===============*/
+
+/*=============== City Image Icon Styling ===============*/
+#cityImage {
+  width: 100px;               /* Set fixed width for uniformity */
+  height: 100px;              /* Set fixed height for uniformity */
+  object-fit: cover;          /* Ensures the image covers the area without distortion */
+  border-radius: 50%;         /* Makes the image circular */
+  border: 3px solid var(--first-color); /* Adds a border around the image */
+  margin-top: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add smooth transitions for hover effect */
+}
+
+#cityImage:hover {
+  transform: scale(1.05);     /* Slightly enlarge the image on hover */
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4); /* Add shadow effect on hover */
+}
+
+/* Results Section */
+.results {
+  padding: 2rem;
+  background: var(--container-color);
+  border-radius: 1.5rem;
+  margin-top: 4rem;  /* Added margin to push the results down */
+}
+
+/* Flex Container */
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+/* Title for Flex Container */
+.flex-container h3 {
+  width: 100%;
+  text-align: center;
+  font-size: 1.5rem;
+  color: rgb(129, 169, 172);
+  margin-bottom: 1rem;
+}
+
+/* Flex Box Style */
+.flex-box {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 1rem;
+  border-radius: 1rem;
+  text-align: center;
+  width: 200px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  color: var(--white-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added transition for hover effect */
+}
+
+.flex-box p {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.flex-box span {
+  font-size: 1.2rem;
+}
+
+/* Hover Effect on Flex Box */
+.flex-box:hover {
+  transform: scale(1.05);  /* Slightly enlarge the box when hovered */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.6); /* Add a stronger shadow on hover */
+}
+
+/*=============== LIGHT AND DARK THEME ===============*/
+:root {
+  --white-color: hsl(0, 0%, 98%);
+  --first-color: hsl(22, 45%, 27%);
+  --first-color-alt: hsl(175, 20%, 25%);
+  --text-color: hsl(0, 0%, 10%);
+  --background-color: hsl(0, 0%, 10%);
+  --container-color: rgba(255, 255, 255, 0.7);
+}
+
+body.light-mode {
+  --background-color: hsl(0, 0%, 98%);
+  --text-color: hsl(0, 5%, 88%);
+  --container-color: rgba(0, 0, 0, 0.5);
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+
+}
+
+footer a {
+  color: var(--first-color);
+}
+
+/*=============== FOOTER ===============*/
+/* Footer Text Style */
+footer {
+  color: rgb(181, 101, 29);   /* Light brown color for footer text */
+  text-align: center;
+  margin-top: 2rem;
+  padding: 1rem;
+  font-size: var(--small-font-size);
+}
+
+/* Styling the link in footer */
+footer a {
+  color:rgb(255, 255, 255); /* Light brown for the link */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: var(rgb(94, 90, 90)); /* Slight color change on hover */
+}
+
+/* Designed by tag */
+.designer-tag {
+  margin-top: 1rem;
+  font-size: var(--small-font-size);
+  color: rgb(181, 101, 29); /* Light brown color for "Designed by" */
+}
+
+.designer-name {
+  font-weight: bold;
+  color: rgb(255, 255, 255); /* White color for your name */
+  text-align: center;
+}
+
+.designer-name:hover {
+  text-decoration: underline; /* Add underline on hover */
+}
+
+/*=============== RESPONSIVE DESIGN ===============*/
+@media (max-width: 768px) {
+  .flex-container {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .flex-box {
+      width: 80%;
+  }
+
+  .header {
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+  }
+
+  .container {
+      padding-top: 6rem;  /* Reduced padding */
+  }
+}
+
